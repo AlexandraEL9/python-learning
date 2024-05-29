@@ -1,0 +1,336 @@
+                                                                      PYTHON 101
+Versitile language
+Very popular
+Easy and forgiving- emphasizes readability- less punctuation, more key words so readable by people/ user 
+ friendly
+'Made for the Web'- data
+Used in AI, Machine Learning and Data Science.
+core language small but expanded through different 'modules'/ 'packages which extend usability
+uses indentation to define scope(not differing punctuation)
+quick to write and test, edit and debug
+lots of open source materials and pre-written packages to construct projects quickly
+often used to automate simple tasks
+used in 'back end' development
+
+Will learn:
+      Basic syntax
+      Outputting data and program flow
+      strings and variables
+      arithmetic operations, and comparisons
+      Lists, Tuples, sets and dictionaries (ways of storing different types of data)
+      Conditionals: if, elif statements
+      while and for loops
+      functions/ return statementsobjects, classes and inheritence
+      List/ dictionary comprehensions and lamda functions
+      Modules
+
+mutable objects= objects that can have their values changed after assignment (list, objects, arrays)
+immutable objects= objects that cannot have their valeus changed after assignment(tuple, primitive data types like boolean, numbers,null)
+
+Brython plugin can be added to head eg
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.0/brython.min.js"></script>
+         <!--<script type="text/javascript"
+     src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.0/brython_stdlib.js"></script>-->
+    </head>
+    <body onload="brython();">
+        <script type="text/python3" src="index.py"></script>
+       
+    </body>
+</html>
+
+odities:
+      input boxes- not always seen in tutorial
+
+
+                     1- Print Statement and Program flow
+
+                     function(argument)
+
+print("welcome")
+
+             Print() statement
+             
+function that outputs to the console
+a means of outputting data
+good for troubleshooting to see the values at each point (like console.log())
+syntax-
+      print("Display this message")
+
+
+
+          Breakpoints Using raise SystemExit
+an exception in python
+breaks out of the running program
+syntax
+     raise SystemExit()
+
+used to stop program at a specific point
+systemExit runs the exit() function in python so code is exoted safely
+
+eg     
+age = 17
+if age <= 18:
+    raise SystemExit('You must be older than 18!')
+
+              syntax errors
+a python errorspoints out when your syntax is incorrect
+look for the arrow pointing to your error 
+
+aka parsing errors
+      parser repeats the line where the error was detected in the terminal
+      caret (^) points to the earliest line where the error occurs
+      text after the SyntaxError may suggest a fix
+      filename and linenumber are printed
+
+                             Logic errors
+an error with the logic of your code
+code that does something other than what you intended
+fix by debugging the code
+
+common errors inc- using wrong variable name
+                incorrect indentation
+                wrong number typesincorrect operator precedence
+                wrong boolean valuesout-by-one error
+
+neatly laying code out to PEP8 standards helps readability- copying and pasting large chunks causes errors
+
+use print() statements to debug
+
+
+                       Declaring variables
+like boxes to store, modify, reference values/ data
+gives values meaning and recall values whenever needed
+use variables to build up data necessary for computer program
+
+stored in RAM (random access memory)
+
+rules for variables:    variable names must start with a regular letter (not a number)
+
+PEP8 is standard for writing python code-   (https://www.python.org/dev/peps/pep-0008/)
+          use lowercase for variable names and spaces shown with underscore
+                  my_var
+            python case sensitive so ve careful
+
+            eg     
+            my_number = 5
+            print(my_number)
+
+            num = 42
+print(num)
+temporary_password = True
+print(temporary_password)
+
+
+                     Functions
+allow us to group pieces of logical statements that will perform a particular task
+Most code will be broken out into functions. Functions are a grouping of statements that work together to perform any actions that we may need
+
+def: This is the keyword that we use to tell Python that we are creating a function definition. 
+print_message: This is the name that we’ve decided to give our function. Be sure to 
+               give your functions meaningful names so that when other people try to 
+               use your code, they’ll able to make sense of what the function does 
+               without having to read the code in the function
+(): The parentheses denote the parameters that a function takes. 
+
+eg
+def print_message():
+    print("Hello World!")
+
+print_message()
+
+
+                     Python Frameworks, Modules and Libraries
+Prewritten Python code
+Allows quick construction of projects
+by using functions from frameworks or Libraries
+    eg NumPy    pandas     Scrapy     django
+
+module= a set of lines of code that have been written for a purpose
+
+eg
+def division(numerator, denominator):
+    result = numerator / denominator
+    return result
+
+^above could be saved in a file called divide.py- it could now be considered a 
+         module- this could then be imported everytime you need to divide
+        eg
+        import divide
+
+        divide.division(4, 2)
+
+Library= code that has been written to be used in many applications with common functionality
+          eg- arithmetic functions
+    A library can be imported into any application where you need the functionality
+
+Framework=  a collection of packages or modules that allows a developer to write web 
+        applications. 
+        deals with all the web protocols leaving you free to write the code specific 
+        to your web app 
+        support with activities such as receiving form parameters, dealing with 
+        cookies or handling session data. 
+        To use a Framework, you write code that conforms to the conventions of the 
+        framework and effectively delegate responsibility for the standard web app  
+        stuff allowing you to concentrate on your application logic.
+
+
+
+
+                                         Data types
+types of data used in python
+different data can do different things
+can check a data type directly or check the type stored by a variable
+
+boolean: True/ false
+Text/ string (str)
+Numeric types: integer (integer)
+            float and complex numbers
+
+data types can be stored in other data types
+  eg- hold a sequence in a list, type or range
+    can map data using a dictionary (dict)
+
+can use type() function to find out a data type
+or
+isinstance() will return true or false
+eg
+my_var = 2
+type(my_var)
+type(2)
+isinstance(my_var, int)
+
+console= 
+<class 'int'>
+<class 'int'>
+True
+
+eg
+print(type("Hello, World!"))                         
+print(type(42))
+print(type(3.145))
+print(type(1j))
+print(type(["egg", "bacon", "spam"]))
+print(type(("egg", "bacon", "spam")))
+print(type(range(6)))
+print(type({"name" : "John", "age" : 80}))
+print(type({"egg", "bacon", "spam"}))
+print(type(True))
+print(isinstance(3.14, int))
+
+<class 'str'>
+<class 'int'>
+<class 'float'>
+<class 'complex'>
+<class 'list'>
+<class 'tuple'>
+<class 'range'>
+<class 'dict'>
+<class 'set'>
+<class 'bool'>
+False
+__________________________challenge
+itm_one = 10
+itm_two = 21.56
+itm_three = 'A string of text'
+itm_four = True
+           (print the type of each item)
+print(type(itm_one))
+print(type(itm_two))
+print(type(itm_three))
+print(type(itm_four))
+                outputs
+ <class 'int'>
+<class 'float'>
+<class 'str'>
+<class 'bool'>  
+
+
+----------------------------Integers, floats, decimals
+
+types of data- numeric types
+
+Integers-  (int)      whole number
+floats/ floating point numbers    number followed by a decimal point eg 12.73
+complex numbers
+
+standard python library also includes
+      fractions.Fraction   for rationals
+      decimal.decimal
+
+constructors int(),     float()   cmplex()
+eg# Declare your variables here
+num1 = 77
+num2 = 3.15
+
+
+# These will print the value TYPES to the terminal 
+print(type(num1))
+print(type(num2))
+
+outputs
+<class 'int'>
+<class 'float'>
+
+
+-------------------------------------None
+a single object
+signifies 'empty' or 'no value here'
+use syntax     None
+
+not the same as 0 or false or an empty string
+
+None used to reasign the variable to None
+has data type of NoneType
+ega = 1
+a = None
+print(a)
+
+def donothing():
+    b = 0
+
+print(donothing())
+outputs
+None
+None
+
+
+----------------------------String variables
+a way of storing strings in memory
+assign a variable a value of string
+eg
+# define your variable here
+parrot = "It's not pining, it's passed on! This parrot is no more! It has ceased to 
+          be!"
+print(parrot)
+
+
+----------------------------------------Converting between Data types
+ability to convert from one data type to another
+allows you to choose appropriate data type for calculation
+by using built-in python functions
+
+int()         float()          str()
+
+Function	What it converts
+int()	     Converts to an integer
+float()	     Converts to a floating-point number
+hex()	     Converts a number to a hexadecimal string
+oct()	     Converts a number to a octal string
+tuple()	     Converts to a tuple
+set()	     Converts to a set
+list()	     Converts to a list
+dict()	     Converts a tuple into a dictionary
+str()	     Converts a number into a string
+
+------------ challenge
+result = 40 + float("2.2")
+print(result)
+
+result_two = "The answer to the ultimate question is " + str(42)
+print(result_two)
+output
+42.2
+The answer to the ultimate question is 42
+
