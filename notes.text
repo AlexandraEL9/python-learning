@@ -334,3 +334,1267 @@ output
 42.2
 The answer to the ultimate question is 42
 
+
+-----------------------------------------------PYTHON SPECIFIC OPERATORS
+
+                                 __Storing Values with Assignment OPERATORS__
+assigning a variable value
+stores the value associated with the variable name
+by using the assignmant operator    =
+
+num_1 = 3
+num_2 = 2
+
+total = num_1 + num_2
+print(total)                  logs (5)
+
+______________________________________________Basic math with Arithmetic operators OPERATORS__
+Basic arithmetic
+counting
+by using arithmetic operators
+
++  addition
+
+-   subtraction
+
+*  multiplication
+
+/  division     (always results in a float)
+
+//  floor division   (returns and integer) rounds answer down to the nearest whole number and returns as an integer
+
+**  exponention     (exponent- to the power of   eg 5 ** 5 is 5 to the power of 5   5 * 5 * 5 * 5 * 5)
+
+%  modulus   - divides the first number by the second and then returns only the remainder   eg  5 % 5=  0
+                                                                                              18%7 = 4
+                                                                                              (18/7=2 r 4)
+               modulus often used to find odd or even numbers
+                                      convert mins into hrs and mins eg convert 10900mins into hrs
+                                                       10900 % 60
+
+Order of operations       PEDMAS- parentheses
+                                  exponents
+                                  division
+                                  multiplication
+                                  addition
+                                  subtraction
+
+----eg
+print(2 + 2)                     
+print(4 - 2)
+print(2 * 3)
+print(9 / 3)
+print(2 ** 3)
+print(18 % 7)
+print(10900 % 60)
+Output
+4
+2
+6
+3.0
+8
+4
+40
+
+--------------------------challenge
+
+product = 72
+total_cost = product + product * 0.21
+
+print(total_cost)                         returns 87.12
+
+______________________________________________Incrementing and Decrementing_
+changing a value in increments
+incorporates assignment and arithmetic operators
+arithmetic operator placed before assignment orerator
+
+eg a running total
+
++= addition and       -= subtraction and       *= multiplication and         /= division and
+
+       **- exponent and     %= modulus and     //= floor division and
+
+combining the arithmetic operator and the assignment operator
+
++= increments a vaviable by adding a value and reassigning the result to the variable
+
+_______eg
+variable_one = "hello "
+variable_two = "world"
+
+variable_one += variable_two                
+print(variable_one)                     returns hello world   (variable_one reassigned to be both)
+print(variable_two)                     returns    world
+
+x = 2
+x *= 3
+print(x)                                returns   6
+
+__________________________challenge
+num = 100
+print(num)       returns 100
+num = 50
+print(num)       returns 50
+num_b = 100
+print(num_b)     returns 100
+num_b %= 3
+print(num_b)      returns 1      (100/3 answer  has a remainder of 1)
+
+
+______________________________________________String Formatting_
+
+process of adding placeholder values to a string to be filled at a later point
+injects text into an empty string at a later point to make it more meaningful
+by using      f-strings    syntax
+
+         f'{string or expression}'
+
+         f"{variable}"
+
+_______eg
+name = input("What's your name? ")
+# Here we don't need age to be a number as we are not
+# going to do any calculations with it so we don't need to wrap the
+# input() in the str() method
+age = input("What's your age: ")
+
+# The Modern way of formatting a string
+print(f"Hello {name}, you are {age} years old")
+
+__________________________challenge
+name = "Igor"
+age = 35
+
+# write your code here
+concat_string = name + " is " + str(age)
+print(concat_string)
+
+f_string = f"{name} is {age}"
+print(f_string)                                               Igor is 35
+                                                              Igor is 35
+
+
+______________________________________________String methods_
+built in python methods that can be used on strings
+allow you tho manipulate string values
+use by using a dot (.) after the string followed byt the method name and a pair of brackets
+
+Method	       Description
+capitalize()	Capitalizes the first character of the string
+center()	   Centers string
+count()	       Returns a count of times a specified value occurs in the string
+encode()	   Returns an encoded version of the string (use decode() to decode)
+endswith()	    Returns True if the string ends with a specified suffix
+expandtabs()	Sets the tab size in spaces of the string
+find()	        Returns the lowest index position of where a specified character was found
+index()	       Searches for a specified value and returns the position of where it was found or an error if not found
+isalnum()	   Returns True if all characters are alphanumeric
+isalpha()	   Returns True if all characters are alphabetic
+isdigit()	    Returns True if all characters are digits
+islower()	   Returns True if all characters are lower case
+isspace()	   Returns True if all characters are whitespace
+istitle()	   Returns True if the string is titlecased
+isupper()	   Returns True if all characters in the string are upper case
+join()	       concatenates string
+ljust()	       Returns a left justified version of the string
+lower()	       Converts a string into lower case
+lstrip()	   Returns a left trim version of the string
+partition()	   Returns a tuple where the string is parted into two strings and the separator
+replace()	    Returns a string where a old value is replaced with a new value
+rfind()	       Searches highest index in the string for a specified value
+rindex()	    Same but with error if nothing found
+rjust()	         Returns a right justified version of the string
+rpartition()	Returns a tuple where the string is parted into three parts
+rsplit()	     Splits the string at the specified separator, and returns a list
+rstrip()	     Returns a right trim version of the string
+split()	        Splits the string at the specified separator, and returns a list
+splitlines()	Splits the string at line breaks and returns a list
+startswith()	Returns true if the string starts with the specified value
+strip()	        Returns a trimmed version of the string
+swapcase()	    Swaps cases, lower case becomes upper case and vice versa
+title()	        Converts the first character of each word to upper case
+translate()	    Returns a translated string
+upper()	       Converts a string into uppercase
+zfill()	       Fills the string with a specified number of 0 values at the beginning
+
+_______eg
+my_string = "HELLO WORLD"
+my_string_lower_case = my_string.lower()                          
+
+print(my_string_lower_case)                                      returns hello world
+
+my_string_2 = "hElLo WorLD"
+my_string_2_upper_case = my_string_2.upper()
+
+print (my_string_2_upper_case)                                     returns HELLO WORLD
+print (my_string.isalpha())                                        returns  False
+
+greetings = my_string.replace("WORLD", "Dave")
+print(greetings)                                                    returns  HELLO Dave
+
+motion = ("jump", "walk", "run")
+new_string = "ing ".join(motion)
+print(new_string)                                                    returns jumping walking run
+
+print(my_string_2.split(" "))                                   returns ['hElLo', 'WorLD]
+
+spaced_string = "     42       "
+print(spaced_string.strip())                                     returns 42
+
+__________________________challenge
+
+dwarves = "Grumpy, Dopey, Doc, Happy, Bashful, Sneezy, Sleepy"
+print(dwarves)                                returns   Grumpy, Dopey, Doc, Happy, Bashful, Sneezy, Sleepy
+
+
+# write your code here
+lowercase_string = dwarves.lower()
+print(lowercase_string)                returns grumpy, dopey, doc, happy, bashful, sneezy, sleepy
+
+commas_removed = lowercase_string.replace(",", "")
+print(commas_removed)                     retuns grumpy  dopey  doc  happy  bashful  sneezy  sleepy
+
+split_list = commas_removed.split()
+print(split_list)                          returns  ['grumpy', 'dopey', 'doc', 'happy', 'bashful', 'sneezy', 'sleepy']
+
+
+__________________________________________________________PYTON SPRCIFIC COMPARATORS
+
+_____________________________________________________Comparing Values with Comparison operators
+a way to compare values
+compares values of variables
+by using comparison operators
+
+         < less than                       > greater than
+         <=  less than or equal to        >= greater than or equal to 
+         == equal to                      != not equal to
+
+_______eg
+print('Hello, World!' == 'Hello, World!')    returns True
+print(2!=2)                                    returns false
+print([1,2]<[1,2,3])                         returns true
+print(float(2)>=int(2))                      returns True
+print('a'<'A') #This is False as 'a' is Unicode 97 where 'A' is 65      returns false
+
+__________________________challenge
+
+a = 10
+b = 5
+
+print(a == b)
+print(a < b)
+print(a <= b)
+print(a > b)
+print(a >= b) 
+
+_____________________________________________________Determining Truth with Logical operators
+a way to combine conditional statements using logical operators
+
+_______eg
+print(True and True)           True
+print(True and False)          False
+print(True or False)           True
+print(not (4 < 5 and 4 < 10)) False
+
+__________________________challenge
+# Define variables a and b
+a = 10
+b = 5
+
+# Define result_one to check if both a is greater than b and a is greater than 10
+result_one = (a > b and a > 10)
+
+# Define result_two to check if either a is equal to 5 or b is less than 5
+result_two = (a == 5 or b < 5)
+
+# Define result_three to negate result_two
+result_three = not result_two
+
+# Print the results
+print(result_one)   # Expected output: False
+print(result_two)   # Expected output: False
+print(result_three) # Expected output: True
+
+
+________________Truthy and Falsy values challenge
+# Assign values to the variables
+a = []        # An empty list is considered False
+b = ""        # An empty string is considered False
+c = "Non-empty string"  # A non-empty string is considered True
+d = 0.0       # 0.0 (float) is considered False
+e = 1         # Any non-zero integer is considered True
+
+# Print the boolean values of the variables
+print(bool(a))  # Expected output: False
+print(bool(b))  # Expected output: False
+print(bool(c))  # Expected output: True
+print(bool(d))  # Expected output: False
+print(bool(e))  # Expected output: True
+
+
+_____________________________________________________Equality vs Identity
+checking the identity of an object beyond matching values or types by using identity operators
+
+check if something has a unique identity
+each object in python does have a unique identifier
+Not all equal values will have the same identifier
+                                          is     /     is not
+       _______eg
+# Assign a value to num
+num = 1
+
+# Assign num to num_two
+num_two = num
+
+# Check if num is equal to num_two
+equality_check = (num == num_two)
+
+# Get the IDs of num and num_two
+id_num = id(num)
+id_num_two = id(num_two)
+
+# Print the results
+print(equality_check)  # Expected output: True, because num and num_two have the same value
+print(id_num)          # Prints the memory ID of num
+print(id_num_two)      # Prints the memory ID of num_two
+
+_____________________________________________________Checking Containment with Containment operators
+a keyword that checks if a value is present in a sequence
+                           keyword  =  in
+            
+            in operator returns true or false
+
+      'Program' in 'Programming'
+      'Program' not in 'Programming'      (not keyword can chesk for absence)
+
+_______eg
+
+print('Program' in 'Programming')       #true
+print('spam' in ['spam', 'egg'])         #true
+print('sausage' not in ['spam', 'egg'])   #true    
+
+__________________________challenge
+# Check if the string "rat" is in the string "crate"
+print("rat" in "crate")  # Expected output: True
+
+# Check if the string "ink" is NOT in the string "sink"
+print("ink" not in "sink")  # Expected output: False
+
+# Check if the string "robbie" is in the list ["gary", "howard", "mark", "jason"]
+print("robbie" in ["gary", "howard", "mark", "jason"])  # Expected output: False
+
+
+
+__________________________________________________________PYTON FLOW CONTROL
+
+______________________________________________If/ Else statements
+if    and     else clauses
+provide us with the ability to handle different Conditions
+
+
+_______eg
+number = int(input("Please enter a number:"))
+
+if number == 5:
+    print(f"{number} is equal to 5")
+else:
+    print(f"{number} is not equal to 5")
+
+
+__________________________challenge 
+a = 10
+b = 20
+result = None
+
+# Write your if statement here:
+if a == b:
+    result = "a has the same value as b"
+else:
+    result = "a has not got the same value as b"
+
+# Print the result
+print(result)  # Expected output: "a has not got the same value as b"
+
+
+______________________________________________Ternary expressions in python
+If expression   allows us to write short hand if statements
+
+_______eg
+my_boolean = False
+
+my_string = "Hello" if my_boolean else "World"
+
+print(my_string)  # Expected output: "World"
+
+
+__________________________challenge
+Assign a ternary conditional statement to the variable result, that evaluates to True if the variable full_access is True or False otherwise
+
+full_access = True
+result = True if full_access else False
+
+print(result)  # Expected output: True
+
+______________________________________________________Python Flow CONTROL
+conditional statements control which parts of code run depending on certain Conditions
+
+Fizz buzz
+The FizzBuzz game contains some  simple logic for kids. You are given the number.
+If the number is divisible by 3, you reply "Fizz",  if the number is divisible by 5, you reply "Buzz".
+If the number is divisible by both 3  and 5 you reply "FizzBuzz". And if the number
+doesn't meet any of these conditions - i.e., it can't be divided by 3 or 5, then you simply reply with the number given.
+
+num =  2
+
+if num % 3 == 0 and num % 5 == 0:
+    print("FizzBuzz")
+elif num % 3 == 0:
+    print("Fizz") 
+elif num % 5 == 0:
+    print("Buzz")
+else:
+    print(num)
+
+
+     Lucid chart for logic diagrams https://www.lucidchart.com/pages/
+
+
+______________________________________________________Multiple conditions if/elif/else
+if-else if-else expression
+allows us to include multiple else blocks
+using elif
+
+_______eg
+number = int(input("Please enter a number:"))
+
+if number > 5:
+    print(f"{number} is greater than 5")
+elif number < 5:
+    print(f"{number} is less than 5")
+else:
+    print(f"{number} is not greater than, or less than 5. Therefore, {number} must be equal to 5.")
+
+
+________________________________challenge
+
+day = 'Friday'
+
+if day == "Monday":
+    print("Meeting at 9:00")
+elif day == "Wednesday":
+    print("Meeting at 2:00")
+elif day == "Friday":
+    print("Meeting at 4:00")
+else:
+    print("No meetings today")
+
+
+______________________________________________________Nested if/else
+nested conditions
+provide a means of implementing additional if/else ladders inside existing if-else blocks
+eg- if need to run additional checks within a blocks
+
+use indentation to define scope
+
+_______eg
+exit_program = True
+manual_override = False
+critical_systems_shutdown = False
+
+if not exit_program and not critical_systems_shutdown:
+    if manual_override:
+        print("Shutting system down manually")
+    else:
+        print("This program will not exit just yet")
+elif exit_program and critical_systems_shutdown is not True:
+    print("Critical systems must be safely shut down before exiting the program")
+else:
+    print("This program will now be terminated...")
+
+________________________________challenge
+admin = True
+update_required = True
+
+if admin:
+    if update_required:
+        print('You are authorized to update')
+    else:
+        print('No update required')
+else:
+    print('You need admin privileges to do this')
+
+
+
+__________________________________________________________________________PYTHON ITERATION
+
+____________________________________________________________For loops
+provide us with the ability to iterate a sequeence of items
+and perform a task for each item in the collection
+used in lists, tuples, dictionaries, sets, strings
+no need for indexing
+
+us 'for' keyword
+ then have an 'item' = a variable name  (usually the singular of the sequence name you are iterating over)
+
+a loop continues until the last item is reached and then the loop is exited
+
+_______eg
+
+languages = ["HTML", "CSS", "JavaScript"]
+for language in languages:
+  print(language)                         returns a list of HTML   CSS    JavaScript
+
+
+for character in "Python":
+  print(character)                       returns a list    P    Y     T     H    O    No
+
+______ range()
+used to loop through the code a specific number of times
+range() function will generating a sequence of numbers- when passing through an argument of 5, we say the sequence needs to be comprised of 5 numbers
+(remember starting from 0)
+
+_______eg
+foods = ['bacon', 'sausage', 'egg', 'spam']
+
+for ind in range(len(foods)):
+	# In this example only the index is iterated over not the value
+    print(ind, foods[ind])
+print(foods)
+# In this case we need to calculate the length of the foods collection
+# Then we generate a range of integers equal to that length
+# Then we iterate over that range of integers
+CONSOLE
+0 bacon
+1 sausage
+2 egg
+3 spam
+['bacon', 'sausage', 'egg', 'spam']
+
+
+________________________________challenge
+# Create a variable named users and assign it a list value
+users = ['anna', 'chris', 'brian']
+
+# Loop over the users list using range() and len()
+for i in range(len(users)):
+    # Update each entry to start with a capital letter using capitalize()
+    users[i] = users[i].capitalize()
+
+# Print the updated users list
+print(users)
+
+
+____________________________________________________________while loops
+provide us with the ability to perform repetitive tasks
+eg- run the same good code over and over again
+
+can run indefinately or as long as a condition is true
+
+_______eg
+# Set the initial value for the countdown number
+countdown_number = 10
+
+# Print messages indicating the start of the countdown
+print("Initiating Countdown Sequence...")
+print("Lift Off Will Commence In...")
+
+# Start the countdown sequence using a while loop
+while countdown_number > 0:
+    # Print the current countdown number and indicate it is in seconds
+    print(f"{countdown_number} seconds...")
+
+    # Decrease the countdown number by 1 for the next iteration
+    countdown_number -= 1
+
+# When the countdown reaches 0, print the final message
+print("And We Have Lift Off!")
+
+CONSOLE
+Initiating Countdown Sequence...
+Lift Off Will Commence In...
+10 seconds...
+9 seconds...
+8 seconds...
+7 seconds...
+6 seconds...
+5 seconds...
+4 seconds...
+3 seconds...
+2 seconds...
+1 seconds...
+0 seconds...
+And We Have Lift Off!
+
+_______eg
+# Set the initial value for the variable play_game to True
+play_game = True
+
+# Start a while loop that continues as long as play_game is True
+while play_game:
+    # Prompt the user whether they want to continue playing
+    continue_playing = input("Would you like to continue playing the game? y/n ")
+
+    # Check the user's input
+    if continue_playing.lower() == "y":
+        # If the user inputs 'y', inform them that they have decided to continue playing
+        print("You have decided to continue playing the game.")
+    elif continue_playing.lower() == "n":
+        # If the user inputs 'n', inform them that the game is closing and set play_game to F
+
+______________________challenge
+# Initialize a variable to start the loop at 0
+number = 0
+
+# Start a while loop that runs until number reaches 10
+while number < 10:
+    # Print the current value of number
+    print(number)
+    # Increment the value of number for the next iteration
+    number += 1
+
+__________________________________________ Controlling Iteration (Break, Continue and Pass)
+controlling iteration by keyword
+allows a break or skip of code
+sometimes need to break out of a loop or skip a step at a certain point- usually determined by a conditional check
+
+In Python, we can break out of and continue running iterations in loops. The break keyword will stop executing the list, and the 
+continue keyword will skip ahead to the next iteration. A pass statement disregards the condition, and the program carries on as 
+though the condition statement was not there.
+
+break statement- allows exit from the loop based on an external conditio- the loop finishes at that point
+
+continue statement- allows to skip over part of the loop based on external conditions- program will then go back to the 
+                     beginning of the loop
+
+pass statement- allows to handle the condition without the loop being affected in any way (loop carries on as normal)
+
+___ eg break
+for number in range(10):
+    if number == 5:
+        break    # break here
+
+    print(f'Number is  {number}')
+
+print('Left the loop')
+CONSOLE'
+
+Number is  0
+Number is  1
+Number is  2
+Number is  3
+Number is  4
+Left the loop
+
+_______eg continue
+
+for number in range(10):
+    if number == 5:
+        continue    # continue here
+
+    print(f'Number is  {number}')
+
+print('Left the loop')
+CONSOLE
+Number is  0
+Number is  1
+Number is  2
+Number is  3
+Number is  4
+Number is  6
+Number is  7
+Number is  8
+Number is  9
+Left the loop
+
+_______eg
+for number in range(10):
+    if number == 5:
+        pass    # pass here
+
+    print(f'Number is  {number}')
+
+print('Left the loop')
+CONSOLE
+Number is  0
+Number is  1
+Number is  2
+Number is  3
+Number is  4
+Number is  5
+Number is  6
+Number is  7
+Number is  8
+Number is  9
+Left the loop
+
+______________________challenge- break
+x = 0
+
+while True:  # Infinite loop
+    if x == 8:
+        break  # Break the loop if x is equal to 8
+    else:
+        print(x)  # Print the value of x
+        x += 1    # Increment x by 1 each time
+#returns 0-7 in a list
+
+______________________challenge- pass
+x = 0
+
+while x < 14:
+    if 4 < x < 11:
+        pass
+    else:
+        print(x)
+    
+    x += 1
+
+______________________________________________________________ Nested Iteration
+when one loop is inside another
+allows you to iterate through an inner loop on each iteration of an outer loop.
+by using 4 spaces of indentation
+
+_______eg
+
+i = 2  # Initialize the outer loop variable i to 2
+while i < 10:  # Outer loop: Continue while i is less than 10
+    j = 2  # Initialize the inner loop variable j to 2
+    while j <= i/j:  # Inner loop: Continue while j is less than or equal to the square root of i
+        if not i % j:  # Check if i is divisible by j without any remainder
+            break  # If i is divisible by j, exit the inner loop
+        j += 1  # Increment j by 1 for the next iteration of the inner loop
+    if j > i/j:  # Check if the loop condition j <= i/j is no longer satisfied, implying i is a prime number
+        print(f'{i} is a prime number')  # If j > i/j, print that i is a prime number
+    i += 1  # Increment i by 1 for the next iteration of the outer loop
+
+    CONSOLE
+2 is a prime number
+3 is a prime number
+5 is a prime number
+7 is a prime number
+
+______________________challenge
+x = 0  # Initialize the variable x to 0
+while x <= 3:  # Outer while loop: Loop while x is less than or equal to 3
+    y = 200  # Initialize the variable y to 200 at the start of each iteration of the outer loop
+    while y <= 203:  # Inner while loop: Loop while y is less than or equal to 203
+        print(x, y)  # Print the current values of x and y
+        y += 1  # Increment y by 1 for each iteration of the inner loop
+    x += 1  # Increment x by 1 for each iteration of the outer loop
+
+
+_________________________________________________________________________________________PYTHON DATA STRUCTURES
+
+______________________________________________________________Lists
+
+list = a collection of items
+collects data
+place items inside [square brackets] and separate them with commas_removed
+
+_______eg
+fruits = ['apple', 'orange', 'banana', 'pear', 'plum']
+
+# Print all fruits
+for fruit in fruits:
+    print(fruit)
+
+print()
+
+# Get an item located in a list
+second_item = fruits[1]
+print(second_item)
+print()
+
+# Add an item to the list
+fruits.append('cherries')
+print(fruits)
+print()
+
+# Reverse the list
+fruits.reverse()
+print(fruits)
+
+# Sort the list alphabetically:
+fruits.sort()
+print(fruits)
+
+CONSOLE
+
+apple
+orange
+banana
+pear
+plum
+orange
+['apple', 'orange', 'banana', 'pear', 'plum', 'cherries']
+['cherries', 'plum', 'pear', 'banana', 'orange', 'apple']
+['apple', 'banana', 'cherries', 'orange', 'pear', 'plum']
+
+_______________________________________________challenge
+# Create a variable named all_numbers and assign it the list value
+all_numbers = [1, 5, 44, 22, 13, 17, 56, 3, 88, 9, 97]
+
+# Create an empty list named big_numbers
+big_numbers = []
+
+# Create a for loop to iterate through the all_numbers list
+for number in all_numbers:
+    # Inside the loop, check if the number is greater than 40
+    if number > 40:
+        # If the number is greater than 40, add it to the big_numbers list
+        big_numbers.append(number)
+
+# Print the values of all_numbers and big_numbers
+print("All numbers:", all_numbers)
+print("Big numbers:", big_numbers)
+
+
+______________________________________________________________List slicing and indexing
+slice notation
+allows us to create sub-lists from lists
+
+______eg-   INDEXING
+fruits = ["apple", "banana", "peach", "pear", "plum", "orange"]
+# As lists are zero-indexed index 0 is the first element
+print(fruits[0])
+# Using an index of -1 gives the last element. Negative indexing counts from the right
+print(fruits[-1])
+print(fruits[2])
+
+CONSOLE 
+apple
+orange
+peach
+
+
+______eg-   slicing
+
+fruits = ["apple", "banana", "peach", "pear", "plum", "orange"]
+print(fruits[0:2])
+CONSOLE
+['apple', 'banana']
+
+fruits = ["apple", "banana", "peach", "pear", "plum", "orange"]
+print(fruits[0:4:2])
+CONSOLE
+['apple', 'peach']
+
+_______________________________________________challenge
+
+# Get the value of "John" out of the names list and assign it to a variable named name
+name = names[2]  # Index 2 corresponds to the third element in the list, which is "John"
+print(name)  # Print the value of the variable name, which is "John"
+
+# Slice the names list starting at index 2 and ending at index 4 (exclusive), assign it to a variable named two_names
+two_names = names[2:4]  # This slice includes elements at index 2 and 3, which are ["John", "Sally"]
+print(two_names)  # Print the value of the variable two_names, which is ["John", "Sally"]
+
+# Slice the names list starting at index 1, ending at index 6 (exclusive), with a step value of 2, assign it to a variable named other_names
+other_names = names[1:6:2]  # This slice includes every second element from index 1 to 5, which are ["Betty", "Sally", "Steven"]
+print(other_names)  # Print the value of the variable other_names, which is ["Betty", "Sally", "Steven"]
+
+console
+John
+['John', 'Sally']
+['Betty', 'Sally', 'Steven']
+
+
+______________________________________________________________List methods
+methods to manipulate the list
+can be applied on list objects
+
+Method	               Description
+list.append(x)	      Add an item to the end of the list.
+list.extend(list)	Extend the list by appending another list.
+list.insert(i, x)	Insert an item at a given position. The first argument is the index of the element before which to insert
+list.remove(x)	      Remove the first item from the list whose value is equal to x. It raises a ValueError if there is no such item.
+list.pop(i)	        Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list.
+list.clear()	      Remove all items from the list.
+list.index(x, start, end)	       Return zero-based index in the list of the first item whose value is equal to x. Raises a ValueError if there is no such item.The optional arguments start and end are interpreted as in the slice notation.
+list.count(x)	         Return the number of times x appears in the list.
+list.sort(key=None, reverse=False)	       Sort the items of the list in place
+list.reverse()	       Reverse the elements of the list in place.
+list.copy()	         Return a copy of the list. Equivalent to a[:].
+
+______eg
+menu = ['eggs', 'bacon', 'spam', 'spam']
+print(menu)
+print(menu.count('spam'))
+print(menu.count('eggs'))
+print(menu.index('eggs'))
+print(menu.reverse())
+print(menu)
+print(menu.append('lobster thermidor'))
+print(menu)
+print(menu.sort())
+print(menu)
+print(menu.pop())
+
+console-------
+
+['eggs', 'bacon', 'spam', 'spam']
+2
+1
+0
+None
+['spam', 'spam', 'bacon', 'eggs']
+None
+['spam', 'spam', 'bacon', 'eggs', 'lobster thermidor']
+None
+['bacon', 'eggs', 'lobster thermidor', 'spam', 'spam']
+spam
+
+_______________________________________________challenge
+# Define a variable named crew and assign it the list value
+crew = ["Jean-Luc", "Wesley", "Warf", "Deanna", "William", "Data", "Geordie", "Tasha"]
+
+# Print the value of crew to the console
+print("Initial crew:", crew)
+
+# Using the pop() method, remove the last item from the crew list
+crew.pop()
+
+# Print the value of crew to the console after pop
+print("After pop:", crew)
+
+# Using the append() method, add the string "Beverly" to the crew list
+crew.append("Beverly")
+
+# Print the value of crew to the console after append
+print("After append:", crew)
+
+# Using the extend() method, add the strings "Miles" and "Guinan" to the crew list
+crew.extend(["Miles", "Guinan"])
+
+# Print the value of crew to the console after extend
+print("After extend:", crew)
+
+# Use the sort() method to sort the crew list by the length of each string, and reverse the list
+crew.sort(key=len, reverse=True)
+
+# Print the value of crew to the console after sort
+print("After sort:", crew)
+
+
+______________________________________________________________TUPLES
+a collection of items
+collects dataplace items inside parentheses and separate with commas
+
+eg     ("apple", "banana", "cherry")
+
+Creating a tuple is referred to as packing. So when you want to get the values back, it is referred to as unpacking.
+It is also possible to get a value with indexing.
+
+why choose a tuple over a list? As it is not changeable, it can be used where you have a constant set of values. 
+
+______eg
+empty = ()
+singleton = 'hello',
+tup = 12345, 54321, 'hello!' # packing two ints and a string in a tuple
+print(empty)
+print(singleton)
+print(tup)
+print(tup[1])
+x, y, z = tup # unpacking tuple into variables
+print(z)
+CONSOLE
+()
+('hello',)
+(12345, 54321, 'hello!')
+54321
+hello!
+
+
+_______________________________________________challenge
+# Create a tuple variable named cars and pack it with the values "Tesla", "BMW", and "Ferrari"
+cars = ("Tesla", "BMW", "Ferrari")
+
+# Print the cars variable to the terminal
+print("Cars tuple:", cars)
+
+# Create a variable named get_car and use tuple indexing to pull out the "BMW" value from the cars tuple
+get_car = cars[1]
+
+# Print the get_car variable to the terminal
+print("Get car:", get_car)
+
+# Unpack the cars tuple and assign its values to variables named car_one, car_two, and car_three
+car_one, car_two, car_three = cars
+
+# Print the car_one, car_two, and car_three variables to the terminal
+print("Car one:", car_one)
+print("Car two:", car_two)
+print("Car three:", car_three)
+CONSOLE
+Cars tuple: ('Tesla', 'BMW', 'Ferrari')
+Get car: BMW
+Car one: Tesla
+Car two: BMW
+Car three: Ferrari
+
+
+______________________________________________________________Dictionaries
+
+provide a means of storing data in a more meaningful way
+
+Key  :   value    Pairs
+
+______eg
+user = {
+    "username": "tombombadil",
+    "first_name": "Tom",
+    "last_name": "Bombadil",
+    "age": 100
+}
+
+print(user)
+print(user['age'])
+user['home'] = 'Withywindle, Middle-Earth'
+user['age'] = 99
+print(user)
+del user['home'] 
+print(user)
+print(list(user))
+print(sorted(user))
+print(user)
+print('username' in user)
+CONSOLE
+{'username': 'tombombadil', 'first_name': 'Tom', 'last_name': 'Bombadil', 'age': 100}
+100
+{'username': 'tombombadil', 'first_name': 'Tom', 'last_name': 'Bombadil', 'age': 99, 'home': 'Withywindle, Middle-Earth'}
+{'username': 'tombombadil', 'first_name': 'Tom', 'last_name': 'Bombadil', 'age': 99}
+['username', 'first_name', 'last_name', 'age']
+['age', 'first_name', 'last_name', 'username']
+{'username': 'tombombadil', 'first_name': 'Tom', 'last_name': 'Bombadil', 'age': 99}
+True
+
+_______________________________________________challenge
+# Declare a variable named spaceship and assign it the value of a dictionary
+spaceship = {
+    "name": "Red Dwarf",
+    "type": "Mining vessel",
+    "owner": "Jupiter Mining Corporation",
+    "captain": "Frank Hollister"
+}
+
+# Print the value of the spaceship object to the terminal
+print(spaceship)
+
+CONSOLE
+{'name': 'Red Dwarf', 'type': 'Mining vessel', 'owner': 'Jupiter Mining Corporation', 'captain': 'Frank Hollister'}
+
+
+______________________________________________________________Getting and Setting Dictionaries
+getting or setting dictionary values
+get a key:value pair or a new valuewith a [square bracket notation or method]
+
+______eg
+keys = ['username', 'first_name', 'last_name', 'age']
+default_value = ''
+user = dict.fromkeys(keys, default_value)
+print(user)
+user['username'] = 'tombombadil'
+user['first_name'] = 'Tom'
+user['last_name'] = 'Bombadil'
+user['age'] = 100
+print(user)
+print(user['age'])
+print(user.get('home', "doesn't exist"))
+user['home'] = 'Withywindle, Middle-Earth'
+user['age'] = 99
+print(user)
+del user['home'] 
+print(user)
+print(list(user.keys()))
+print(list(user.values()))
+print(user)
+CONSOLE
+{'username': '', 'first_name': '', 'last_name': '', 'age': ''}
+{'username': 'tombombadil', 'first_name': 'Tom', 'last_name': 'Bombadil', 'age': 100}
+100
+doesn't exist
+{'username': 'tombombadil', 'first_name': 'Tom', 'last_name': 'Bombadil', 'age': 99, 'home': 'Withywindle, Middle-Earth'}
+{'username': 'tombombadil', 'first_name': 'Tom', 'last_name': 'Bombadil', 'age': 99}
+['username', 'first_name', 'last_name', 'age']
+['tombombadil', 'Tom', 'Bombadil', 99]
+{'username': 'tombombadil', 'first_name': 'Tom', 'last_name': 'Bombadil', 'age': 99}
+
+
+_______________________________________________challenge
+data = {
+    "first_name": "Arthur",
+    "last_name": "Dent",
+    "species": "Human"
+}
+
+# add your code here
+# Using the key "first_name", pull the value from the data dictionary and assign it to a variable called name
+name = data["first_name"]
+
+# Print the value of name to the terminal
+print("Name:", name)
+
+# Using the key "species", pull the value from the data dictionary and assign it to a variable called species
+species = data["species"]
+
+# Print the value of species to the terminal
+print("Species:", species)
+
+# Insert a new key "age" with a value of 42 into the data dictionary
+data["age"] = 42
+
+# Print the updated data dictionary to the terminal
+
+# this will print the data to the terminal
+print(data)
+CONSOLE
+Name: Arthur
+Species: Human
+{'first_name': 'Arthur', 'last_name': 'Dent', 'species': 'Human', 'age': 42}
+
+
+
+______________________________________________________________Dictionary methods
+
+Method	                           Description
+clear()	                      Removes all the elements from the dictionary
+copy()	                      Returns a copy of the dictionary
+fromkeys()	                    Returns a new dictionary with the specified keys and value
+get(keyname, value)	          Returns the value of the specified keyname. Used in the previous unit. Returns default None if the keyname doesn't exist unless you override this default with a optional value.
+items()	                     Returns a list containing a tuple for each key:value pair
+keys()	                       Returns a list containing the dictionary's keys. Used in the previous unit.
+pop()	                      Removes the element with the specified key
+popitem()	                 Removes the last inserted key:value pair
+setdefault()	             Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+update()	                  Updates the dictionary with the specified key:value pairs
+values()	                  Returns a list of all the values in the dictionary. Used in the previous unit.
+
+______eg
+user = {
+    "username": "tombombadil",
+    "first_name": "Tom",
+    "last_name": "Bombadil",
+    "age": 100
+}
+
+print(user)
+print(user.items())
+print(user.get('age', 0))
+user.update({'home': 'Withywindle, Middle-Earth'})
+print(user)
+print(user.popitem())
+print(user)
+user.clear()
+print(user)
+CONSOLE
+{'username': 'tombombadil', 'first_name': 'Tom', 'last_name': 'Bombadil', 'age': 100}
+dict_items([('username', 'tombombadil'), ('first_name', 'Tom'), ('last_name', 'Bombadil'), ('age', 100)])
+100
+{'username': 'tombombadil', 'first_name': 'Tom', 'last_name': 'Bombadil', 'age': 100, 'home': 'Withywindle, Middle-Earth'}
+('home', 'Withywindle, Middle-Earth')
+{'username': 'tombombadil', 'first_name': 'Tom', 'last_name': 'Bombadil', 'age': 100}
+{}
+
+_______________________________________________challenge
+challenger = {
+	"name": "Katniss Everdeen",
+	"age": 16,
+	"district": 12,
+	"weapon": "Bow and Arrow", 
+	"status": "Victor"
+}
+
+# add your code here
+# Use the update() method to add a new key-value pair to the challenger dictionary
+challenger.update({"occupation": "Hunter"})
+
+# Use the get() method to get the value stored at the "occupation" key in the challenger dictionary
+occupation = challenger.get("occupation")
+
+# Print the value of the occupation variable to the terminal
+print("Occupation:", occupation)
+
+# Use the update() method to update the value stored at the "age" key to 17
+challenger.update({"age": 17})
+
+# Use the pop() method to remove the key-value pair for "status" from the challenger dictionary
+challenger.pop("status")
+
+# Print the updated challenger dictionary to the terminal
+print(challenger)
+CONSOLE
+Occupation: Hunter
+{'name': 'Katniss Everdeen', 'age': 17, 'district': 12, 'weapon': 'Bow and Arrow', 'occupation': 'Hunter'}
+{'name': 'Katniss Everdeen', 'age': 17, 'district': 12, 'weapon': 'Bow and Arrow', 'occupation': 'Hunter'}
+
+
+______________________________________________________________Sets
+an unordered collection with no duplicates
+used with curly brackets and commas to separate iteems
+
+set()     ()     can also is 'in' keyword with sets
+
+good for forbiding duplicates
+can use dictionary methods like add()   update()     discard()     remove()     pop()
+
+______eg
+breakfast = {'bacon', 'egg', 'spam', 'spam', 'spam', 'spam', 'spam'}
+print(breakfast)
+print('egg' in breakfast)
+breakfast.add('sausage')
+print(breakfast)
+breakfast.update(['Lobster Thermidor', 'truffle pate', 'crevettes', 'shallots','aubergines'])
+print(breakfast)
+breakfast.discard('aubergines')
+print(breakfast)
+CONSOLE
+{'egg', 'spam', 'bacon'}
+True
+{'egg', 'sausage', 'spam', 'bacon'}
+{'truffle pate', 'aubergines', 'spam', 'egg', 'crevettes', 'sausage', 'Lobster Thermidor', 'shallots', 'bacon'}
+{'truffle pate', 'spam', 'egg', 'crevettes', 'sausage', 'Lobster Thermidor', 'shallots', 'bacon'}
+
+______eg- set operators
+hello = set("Hello")
+world = set("World")
+print(f"The unique letters in hello are: {hello}")
+print(f"The letters in hello or world or both are: {hello|world}") # | is the symbol for union
+print(f"The letters in both hello and world are: {hello&world}") # & is the symbol for intersection
+print(f"The letters in hello but not world are: {hello-world}") # - is the symbol for difference
+print(f"The letters in hello and world but not both are: {hello^world}") # ^ is the symbol for symmetric difference
+CONSOLE
+The unique letters in hello are: {'H', 'o', 'e', 'l'}
+The letters in hello or world or both are: {'d', 'W', 'H', 'e', 'r', 'o', 'l'}
+The letters in both hello and world are: {'o', 'l'}
+The letters in hello but not world are: {'H', 'e'}
+The letters in hello and world but not both are: {'d', 'e', 'W', 'H', 'r'}
+
+______________________challenge
+product_list = ['hammer', 'saw', 'nails', 'wood', 'screws', 'paint', 'brushes', 'light bulbs']
+products_bought = {'nails', 'screws', 'hammer', 'wood', 'saw', 'hammer', 'saw', 'nails', 'nails', 'screws', 'hammer'}
+
+# add your code here
+# Use the add() method to add the string "light bulbs" to the products_bought set
+products_bought.add("light bulbs")
+
+# Use the update() method to add a list of three more products that have been bought to the products_bought set
+products_bought.update(['wood', 'screws', 'saw'])
+
+# Create a variable has_nails and assign it an expression that checks if "nails" is in the products_bought set
+has_nails = "nails" in products_bought
+
+# Create a variable has_paint and assign it an expression that checks if "paint" is in the products_bought set
+has_paint = "paint" in products_bought
+
+# Create a variable named unsold_items. Assign it an expression that finds the difference between product_list and products_bought
+unsold_items = set(product_list) - products_bought
+
+# Print out the variables
+print("Has nails:", has_nails)
+print("Has paint:", has_paint)
+print("Unsold items:", unsold_items)
+CONSOLE
+Console:
+Has nails: True
+Has paint: False
+Unsold items: {'paint', 'brushes'}
